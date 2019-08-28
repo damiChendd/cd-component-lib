@@ -1,0 +1,160 @@
+/*按钮样式*/
+.cd-button{
+    color: rgb(255,255,255);
+    min-width: 100px;
+    min-height: 35px;
+    background-color: rgb(255,0,0);
+    border: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/*弹窗样式*/
+.container{
+    width:100%;
+    position: relative;
+}
+.mask{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 998;
+}
+.side-dialog-content{
+    padding: 15px;
+    background-color: white;
+    width: 30%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 999;
+}
+.center-dialog-content{
+    padding: 15px;
+    background-color: white;
+    width: 30%;
+    position: fixed;
+    top: 20%;
+    right: 30%;
+    z-index: 999;
+}
+/*form表单*/
+/*input*/
+.cd-input{
+    width: 180px;
+    min-height: 35px;
+    border: 1px solid #eeeeee;
+    border-radius: 5px;
+    outline: none;
+    color: #333333;
+    text-align: left;
+    padding: 0px 8px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    display: inline-block;
+}
+
+
+/*选择框样式*/
+.row-right{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid #cccccc;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-top: 5px solid transparent;
+    cursor: pointer;
+}
+.row-left{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid #cccccc;
+    border-bottom: 5px solid transparent;
+    border-top: 5px solid transparent;
+    cursor: pointer;
+}
+.row-top{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #cccccc;
+    cursor: pointer;
+}
+.row-bottom{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #cccccc;
+    cursor: pointer;
+}
+
+.cd-select{
+    width: 180px;
+    min-height: 35px;
+    border: 1px solid #eeeeee;
+    border-radius: 5px;
+    outline: none;
+    color: #333333;
+    text-align: left;
+    padding: 0px 8px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.cd-option{
+    width: 196px;
+    min-height: 35px;
+    border: 1px solid #eeeeee;
+    border-radius: 5px;
+    color: #333333;
+    text-align: left;
+    font-size: 14px;
+}
+
+.cd-option ul{
+    margin: 0;
+    padding: 8px;
+}
+.cd-option ul li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    cursor:pointer;
+}
+
+.hand{
+    cursor: pointer;
+}
+
+/*textarea样式*/
+.cd-textarea{
+    border: 1px solid #eeeeee;
+    border-radius: 5px;
+    outline: none;
+    color: #333333;
+    text-align: left;
+    padding: 0px 8px;
+    font-size: 14px;
+    display: inline-block;
+}

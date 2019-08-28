@@ -1,5 +1,9 @@
 <template>
-  <button class="btn">按钮</button>
+  <button
+    class="cd-button"
+    @click="handleClick">
+    <slot></slot>
+  </button>
 </template>
 
 <script>
@@ -7,17 +11,11 @@ export default {
   name: 'button',
   data: function () {
     return {}
+  },
+  methods: {
+    handleClick (e) {
+      this.$emit('click', e)
+    }
   }
 }
 </script>
-
-<style scoped>
-  .btn{
-    width: 60px;
-    height: 35px;
-    background-color: pink;
-    border: none;
-    cursor: pointer;
-    font-size: 12px;
-  }
-</style>
