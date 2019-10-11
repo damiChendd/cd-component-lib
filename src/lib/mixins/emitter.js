@@ -12,10 +12,16 @@ function broadcast (componentName, eventName, params) {
 export default {
   methods: {
     dispatch (componentName, eventName, params) {
+      console.log('进入父组件')
       var parent = this.$parent || this.$root
       var name = parent.$options.componentName
+      console.log('找到父组件')
+      console.log(parent)
+      console.log(name)
+      console.log(params)
 
       while (parent && (!name || name !== componentName)) {
+        console.log('进入循环')
         parent = parent.$parent
 
         if (parent) {

@@ -10,7 +10,7 @@ export default {
     }
   },
   created () {
-    console.log('获取调用传过来的属性')
+    // console.log('获取调用传过来的属性')
   }
 }
 </script>

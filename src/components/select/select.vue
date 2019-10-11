@@ -7,11 +7,6 @@
     </div>
     <div>
       <ul v-if="option_show">
-        <el-option
-                :value="query"
-                created
-                v-if="showNewOption">
-        </el-option>
         <slot></slot>
       </ul>
     </div>
@@ -52,11 +47,15 @@ export default {
   },
 
   created () {
-    console.log('打印信息')
-    console.log(this.broadcast('select'))
-    console.log('打印远端地function函数')
-    console.log(this.remoteMethod)
+    // 监听接收子组件传的信息
+    console.log('打印value的变化')
+    console.log(this.value)
+    console.log('进入监听')
+    // console.log(this.$on('getSelectVal', this.handleSelect))
+    // this.$on('getSelectVal', this.getSelectVal)
+    this.$on('getSelectVal', this.handleSelect)
   },
+
   mounted () {
   },
 
@@ -67,17 +66,20 @@ export default {
     handleOption () {
       this.option_show = !this.option_show
     },
-    getOptionItem (val) {
-      this.select_label = val
-      this.option_show = false
-    },
+    // getOptionItem (val) {
+    //   this.select_label = val
+    //   this.option_show = false
+    // },
     getSelectVal (val) {
+      // 选择的事件
+      console.log('打印select组件接收到的信息')
+      console.log(val)
       this.select_label = val
+    },
+    handleSelect (option) {
+      console.log('进入父组件接收值')
+      console.log(option)
     }
-  },
-
-  setCreated () {
-    // 如果有值，就将option创建，否则不创建，显示暂无数据
   }
 }
 </script>

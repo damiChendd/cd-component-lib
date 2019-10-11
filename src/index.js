@@ -8,6 +8,7 @@ import cdOption from './components/option/index'
 import cdForm from './components/form/index'
 import cdFormItem from './components/form-item/index'
 import cdTextarea from './components/textarea/index'
+import cdDatePicker from './components/date-picker/index'
 
 const components = [
   cdButton,
@@ -18,7 +19,8 @@ const components = [
   cdOption,
   cdForm,
   cdFormItem,
-  cdTextarea
+  cdTextarea,
+  cdDatePicker
 ]
 
 const install = function (Vue, opts = {}) {
@@ -41,5 +43,6 @@ export default {
   cdOption,
   cdForm,
   cdFormItem,
-  cdTextarea
+  cdTextarea,
+  cdDatePicker
 }

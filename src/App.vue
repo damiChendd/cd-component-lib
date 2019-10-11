@@ -1,11 +1,19 @@
 <template>
   <div id="app">
     <div>
+      <!--按钮-->
       <cd-button @click="clickBtn()">按钮</cd-button>
+
+      <!--select-->
       <cd-select v-model="select_value">
-        <!--<cd-option v-for="item in select_info" :key="item.id" :value="item.name" :label="item.name"></cd-option>-->
+        <cd-option v-for="item in select_info" :key="item.id" :value="item.name" :label="item.name"></cd-option>
       </cd-select>
-      <cd-table style="margin-top: 20px" :value="table_data"></cd-table>
+
+      <!--table-->
+      <cd-table style="margin-top: 20px" :value="table_data">
+      </cd-table>
+
+      <!--弹窗-->
       <cd-button style="margin-top: 20px"  @click="openSideDialog">打开侧边栏弹窗</cd-button>
       <cd-button style="margin-top: 20px"  @click="openCenterDialog">打开中间弹窗</cd-button>
       <cd-side-dialog :visible.sync="side_dialog">
@@ -15,23 +23,24 @@
         <p style="color: rgb(255,0,0)">中间弹窗</p>
       </cd-center-dialog>
 
+      <!--表单-->
       <cd-form style="margin-top: 15px" v-model="form_data">
         <!--input-->
-        <cd-form-item label="姓名">
+        <cd-form-item label="姓名：">
           <cd-input v-model="form_data.name" type="text"></cd-input>
         </cd-form-item>
         <!--radio-->
-        <cd-form-item label="性别">
+        <cd-form-item label="性别：">
           <cd-radio v-model="form_data.sex" type="radio"></cd-radio>
           <cd-radio v-model="form_data.sex" type="radio"></cd-radio>
         </cd-form-item>
         <!--textarea-->
-        <cd-form-item>
+        <cd-form-item label="备注：">
           <cd-textarea rows="5" cols="15">textarea测试</cd-textarea>
         </cd-form-item>
         <!--chenckbox-->
-        <cd-form-item>
-          <cd-checkbox>测试</cd-checkbox>
+        <cd-form-item label="是否显示：">
+          <cd-checkbox></cd-checkbox>
         </cd-form-item>
         <!--<cd-form-item label="是否显示">-->
           <!--<input v-model="form_data.isShow" type="checkbox">-->
@@ -46,9 +55,20 @@
           <!--<input type="file" multiple>-->
         <!--</cd-form-item>-->
         <cd-form-item>
-          <input type="button" @click="getFormInfo()" value="打印数据">
+          <cd-button @click="getFormInfo()"> 打印数据 </cd-button>
         </cd-form-item>
       </cd-form>
+      <br>
+
+      <!--提示框-->
+      <cd-button @click="showAlert()">alert</cd-button>
+      <cd-button @click="showConfirm()">confirm</cd-button>
+      <cd-button @click="showPrompt()">prompt</cd-button>
+
+      <!--日期选择器-->
+      <cd-date-picker></cd-date-picker>
+      <!--时间选择器-->
+      <!--<cd-time-picker></cd-time-picker>-->
     </div>
   </div>
 </template>
@@ -66,6 +86,7 @@ import cdInput from './components/input'
 import cdRadio from './components/radio'
 import cdTextarea from './components/textarea'
 import cdCheckbox from './components/checkbox'
+import cdDatePicker from './components/date-picker'
 export default {
   name: 'App',
   components: {
@@ -80,7 +101,8 @@ export default {
     cdInput,
     cdRadio,
     cdTextarea,
-    cdCheckbox
+    cdCheckbox,
+    cdDatePicker
   },
   data () {
     return {
@@ -151,6 +173,15 @@ export default {
     getFormInfo () {
       console.log('打印表单数据')
       console.log(this.form_data)
+    },
+    showAlert () {
+      alert('这是alert弹窗')
+    },
+    showConfirm () {
+      confirm('这是confirm弹窗')
+    },
+    showPrompt () {
+      prompt('这是prompt弹窗')
     }
   }
 }
@@ -163,6 +194,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   /*text-align: center;*/
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
