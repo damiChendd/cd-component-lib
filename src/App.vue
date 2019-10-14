@@ -68,7 +68,7 @@
       <!--日期选择器-->
       <cd-date-picker></cd-date-picker>
       <!--时间选择器-->
-      <!--<cd-time-picker></cd-time-picker>-->
+      <cd-time-picker></cd-time-picker>
     </div>
   </div>
 </template>
@@ -87,6 +87,7 @@ import cdRadio from './components/radio'
 import cdTextarea from './components/textarea'
 import cdCheckbox from './components/checkbox'
 import cdDatePicker from './components/date-picker'
+import cdTimePicker from './components/time-picker'
 export default {
   name: 'App',
   components: {
@@ -102,7 +103,8 @@ export default {
     cdRadio,
     cdTextarea,
     cdCheckbox,
-    cdDatePicker
+    cdDatePicker,
+    cdTimePicker
   },
   data () {
     return {

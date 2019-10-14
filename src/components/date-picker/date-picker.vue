@@ -47,6 +47,7 @@ export default {
   },
   created () {
     this.initYMD()
+    this.initMonthDay()
   },
   methods: {
     initYMD () {
@@ -57,15 +58,11 @@ export default {
       this.ymd = this.year + ',' + (this.month + 1) + ',' + '01'
       this.firstDay = new Date(this.ymd).getDay() // 当前日是周几
     },
-    showDateDialog () {
-      this.show_date_dialog = !this.show_date_dialog
-      this.setMonthDay()
-    },
-    // 设置一个月的日数组
-    setMonthDay () {
-      this.monthDay = new Array()
+
+    initMonthDay () {
+      this.monthDay = []
       for (let i = 0; i < 6; i++) {
-        this.monthDay[i] = new Array()
+        this.monthDay[i] = []
         for (let j = 0; j < 7; j++) {
           this.monthDay[i][j] = 0
         }
@@ -84,14 +81,53 @@ export default {
         }
       }
     },
-    getSelectDate (day) {
-      this.select_date = this.year + '-' + this.month + '-' + day
+
+    showDateDialog () {
+      this.show_date_dialog = !this.show_date_dialog
     },
+
+    getMonthDayCount () {
+      this.day = new Date(this.year, this.month + 1, 0).getDate()// 日总和
+      this.ymd = this.year + ',' + (this.month + 1) + ',' + '01'
+      this.firstDay = new Date(this.ymd).getDay() // 当前日是周几
+    },
+
+    setMonthDay () {
+      for (let i = 0; i < 6; i++) {
+        for (let j = 0; j < 7; j++) {
+          this.monthDay[i][j] = 0
+        }
+      }
+      let count = 0
+      let countDay = 1
+      for (let i = 0; i < 6; i++) {
+        for (let j = 0; j < 7; j++) {
+          if (countDay > this.day) break
+          if (this.firstDay === count) {
+            this.monthDay[i][j] = countDay
+            countDay++
+          } else {
+            count++
+          }
+        }
+      }
+    },
+
+    getSelectDate (day) {
+      this.select_date = this.year + '-' + (this.month + 1) + '-' + day
+      this.show_date_dialog = false
+    },
+
     getBeforeMonth () {
       this.month--
-      // 重置数组
+      this.getMonthDayCount()
+      this.setMonthDay()
     },
+
     getAfterMonth () {
+      this.month++
+      this.getMonthDayCount()
+      this.setMonthDay()
     }
   }
 }
@@ -117,6 +153,7 @@ export default {
   }
   .day-style{
     color: white;
+    font-size: 12px;
     background-color: #cccccc;
     display: inline-block;
     width: 20px;
@@ -127,6 +164,7 @@ export default {
   }
   .this-day-style{
     color: white;
+    font-size: 12px;
     background-color: red;
     display: inline-block;
     width: 20px;
