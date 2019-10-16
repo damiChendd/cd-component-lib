@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'textarea',
+  name: 'cd-textarea',
   data () {
     return {
     }

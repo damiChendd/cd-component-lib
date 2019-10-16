@@ -25,35 +25,23 @@
 
       <!--表单-->
       <cd-form style="margin-top: 15px" v-model="form_data">
-        <!--input-->
         <cd-form-item label="姓名：">
           <cd-input v-model="form_data.name" type="text"></cd-input>
         </cd-form-item>
-        <!--radio-->
+
         <cd-form-item label="性别：">
           <cd-radio v-model="form_data.sex" type="radio"></cd-radio>
           <cd-radio v-model="form_data.sex" type="radio"></cd-radio>
         </cd-form-item>
-        <!--textarea-->
+
         <cd-form-item label="备注：">
           <cd-textarea rows="5" cols="15">textarea测试</cd-textarea>
         </cd-form-item>
-        <!--chenckbox-->
+
         <cd-form-item label="是否显示：">
           <cd-checkbox></cd-checkbox>
         </cd-form-item>
-        <!--<cd-form-item label="是否显示">-->
-          <!--<input v-model="form_data.isShow" type="checkbox">-->
-        <!--</cd-form-item>-->
-        <!--<cd-form-item label="测试">-->
-          <!--<cd-input v-model="form_data.test"></cd-input>-->
-        <!--</cd-form-item>-->
-        <!--<cd-form-item label="日期测试">-->
-          <!--<input type="date">-->
-        <!--</cd-form-item>-->
-        <!--<cd-form-item>-->
-          <!--<input type="file" multiple>-->
-        <!--</cd-form-item>-->
+
         <cd-form-item>
           <cd-button @click="getFormInfo()"> 打印数据 </cd-button>
         </cd-form-item>

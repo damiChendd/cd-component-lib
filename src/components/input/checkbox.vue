@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'checkbox'
+  name: 'cd-checkbox'
 }
 </script>
 

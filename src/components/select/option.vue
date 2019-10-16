@@ -7,7 +7,7 @@
 <script>
 import Emitter from '../../lib/mixins/emitter'
 export default {
-  name: 'option',
+  name: 'cd-option',
   inject: ['select'],
   props: ['label', 'value', 'visible'],
   mixins: [Emitter],

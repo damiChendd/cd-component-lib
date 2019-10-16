@@ -3,9 +3,9 @@
 </template>
 
 <script>
-  export default {
-    name: 'date'
-  }
+export default {
+  name: 'cd-date'
+}
 </script>
 
 <style scoped>

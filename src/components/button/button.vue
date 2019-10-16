@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'button',
+  name: 'cd-button',
   data: function () {
     return {}
   },

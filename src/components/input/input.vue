@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'input',
+  name: 'cd-input',
   props: ['value'],
   data () {
     return {

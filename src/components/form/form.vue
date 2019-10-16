@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'form',
+  name: 'cd-form',
   props: ['value'],
   data () {
     return {

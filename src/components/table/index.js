@@ -1,5 +1,5 @@
 // 引入组件
-import cdTable from './select'
+import cdTable from './table'
 
 cdTable.install = Vue => Vue.component(cdTable.name, cdTable)
 

@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'radio',
+  name: 'cd-radio',
   data () {
     return {
       focus: false

@@ -31,7 +31,7 @@
 
 <script>
 export default {
-  name: 'date-picker',
+  name: 'cd-date-picker',
   data: function () {
     return {
       show_date_dialog: false,

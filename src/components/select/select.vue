@@ -20,7 +20,7 @@ export default {
   // 混入对象，使组件共享当前混入地内容
   mixins: [Emitter],
 
-  name: 'select',
+  name: 'cd-select',
 
   provide () {
     return {

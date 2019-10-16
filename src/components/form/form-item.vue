@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'form-item',
+  name: 'cd-form-item',
   props: {
     label: String
   },

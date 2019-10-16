@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'layout'
+  name: 'cd-layout'
 }
 </script>
 

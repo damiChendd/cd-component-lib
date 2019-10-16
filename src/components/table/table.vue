@@ -34,7 +34,7 @@
 <script>
 import tableHeader from './table-header'
 export default {
-  name: 'table',
+  name: 'cd-table',
   props: ['value'],
   components: {tableHeader},
   data: function () {
